@@ -1,0 +1,16 @@
+# Johnny is building a fence. Take as input the name of the desired shape
+# (“circle” or“square”) and the length of the fence Johnny has, and print the area covered by Johnny’s fence.
+
+name = input("Desired shape: ")
+area = None
+if name == "square":
+    length = float(input("Enter length of square: "))
+    area = (length / 4) ** 2
+    print(area)
+elif name == "circle":
+    length = float(input("Enter length of circle: "))
+    area = (length ** 2) / (4 * 3.14)
+    print(area)
+else:
+    print("False shape name")
+exit()
