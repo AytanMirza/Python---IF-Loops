@@ -1,0 +1,12 @@
+# Print all prime numbers between 1 and 100. Try to make your program as efficient as possible using only the tools we learned so far.
+# For example, for each number we test for primeness, we only need to check if it’s divisible by smaller primes
+# (so we don’t need to test division by 4, 6, 8, 9, 10, ... ).
+
+start = 2
+end = 100
+for num in range(start, end + 1):
+    for i in range(2, num):
+        if (num % i) == 0:
+            break
+    else:
+        print(num)
