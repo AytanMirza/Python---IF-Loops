@@ -1,0 +1,31 @@
+# Get real number inputs from the user until they wish to quit.
+# When they quit, print the largest number, then the second largest number, then the third largest number.
+# Don’t use lists for this exercise.
+
+done = False
+first_largest = 0
+second_largest = 0
+third_largest = 0
+number = 0
+while not done:
+   number = int(input("enter the number: "))
+   if number > first_largest:
+       third_largest = second_largest
+       second_largest = first_largest
+       first_largest = number
+   elif number > second_largest:
+       second_largest = third_largest
+       second_largest = number
+   elif number > third_largest:
+       third_largest = number
+
+   answer = input("Do you want to quit? Yes or No: ")
+   if answer == 'Yes':
+       done = True
+       print('first_largest number is: ', first_largest)
+       print('second largest number is: ', second_largest)
+       print('third largest number is: ', third_largest)
+   elif answer == 'No':
+       done = False
+   else:
+       print('Not Valid')
