@@ -1,0 +1,51 @@
+# Run a series of “rock paper scissors” games, until the user wishes to quit. Print the statsafter each game
+# (no. of computer wins, no. of user wins, no. of ties).When the user quits, print who the final winner is
+
+import random
+player = input('Enter your turn: r, p or s: ')
+computer = ['r', 'p', 's']
+a = random.choice(computer)
+c = True
+computer_correct = 0
+player_correct = 0
+tie = 0
+while c == True:
+    if player == computer:
+        print("Tie the game")
+        tie += 1
+    elif player == 'r':
+        if computer == 's':
+            print("Player is winner!")
+            player_correct += 1
+        else:
+            print("Computer is winner!")
+            computer_correct += 1
+    elif player == 'p':
+        if computer == 'r':
+            print("Computer is winner!")
+            computer_correct += 1
+        else:
+            print("Player is winner!")
+            player_correct += 1
+    elif player == 's':
+        if computer == "p":
+            print("Player is winner!")
+            player_correct += 1
+        else:
+            print("Computer is winner!")
+            computer_correct += 1
+    reminder = input("Do you want to continue play? ")
+    if reminder == 'Yes' or reminder == 'yes':
+       c = True
+       player = input('Enter your turn: r, p or s: ')
+    else:
+        print("Done")
+        break
+print('Computer score: ', computer_correct)
+print('Player score: ', player_correct)
+if computer_correct > player_correct:
+    print("Computer is final winner!!!")
+elif computer_correct < player_correct:
+    print("Player is final winner!!!")
+elif computer_correct == player_correct:
+    print("Tie the Game!!!")
